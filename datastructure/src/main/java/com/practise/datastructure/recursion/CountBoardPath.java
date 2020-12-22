@@ -6,8 +6,8 @@ public class CountBoardPath {
         System.out.println(countBoardPath(0, 10));
     }
 
-    public static  int countBoardPath(int cr, int end) {
-        if(cr == end) {
+    public static int countBoardPath(int cr, int end) {
+        if (cr == end) {
             return 1;
         }
         if (cr > end) {
@@ -22,14 +22,14 @@ public class CountBoardPath {
         int count6 = 0;
 
         // Below code is for understanding we need not to write 6 recursive calls like this just use loop as used in comment
-                count1 = count1 + countBoardPath(cr+1, end);
-                count2 = count2 + countBoardPath(cr+2, end);
-                count3 = count3 + countBoardPath(cr+3, end);
-                count4 = count4 + countBoardPath(cr+4, end);
-                count5 = count5 + countBoardPath(cr+5, end);
-                count6 = count6 + countBoardPath(cr+6, end);
+        count1 = count1 + countBoardPath(cr + 1, end);
+        count2 = count2 + countBoardPath(cr + 2, end);
+        count3 = count3 + countBoardPath(cr + 3, end);
+        count4 = count4 + countBoardPath(cr + 4, end);
+        count5 = count5 + countBoardPath(cr + 5, end);
+        count6 = count6 + countBoardPath(cr + 6, end);
 
-                count = count1 + count2 + count3 + count4 + count5 + count6;
+        count = count1 + count2 + count3 + count4 + count5 + count6;
 
 
         /*

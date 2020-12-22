@@ -11,7 +11,7 @@ package com.practise.datastructure.backtracking;
 
 public class Two_D_QueenCombinationKill {
     public static void main(String[] args) {
-        twoDQueenCombinationKill(new boolean[4][4], 0,0,4,0,"");
+        twoDQueenCombinationKill(new boolean[4][4], 0, 0, 4, 0, "");
     }
 
     public static void twoDQueenCombinationKill(boolean[][] board, int row, int col, int totalQueen, int queenPlaced, String res) {
@@ -23,29 +23,29 @@ public class Two_D_QueenCombinationKill {
          */
 
         // +ve base case
-        if (totalQueen ==  queenPlaced) {
+        if (totalQueen == queenPlaced) {
             System.out.println(res);
             return;
         }
 
         // Out of boundary case
-        if(col == board[row].length) {
+        if (col == board[row].length) {
             row++;
-            col=0;
+            col = 0;
         }
 
         // -ve base case
-        if(row == board.length){
+        if (row == board.length) {
             return;
         }
         // Place call
-        if(isSafe(board, row,col)) {
+        if (isSafe(board, row, col)) {
             board[row][col] = true;
-            twoDQueenCombinationKill(board,row,col+1, totalQueen, queenPlaced+1,res+" Q"+queenPlaced+"B["+row+"]["+col+"] ");
-            board[row][col] =false;
+            twoDQueenCombinationKill(board, row, col + 1, totalQueen, queenPlaced + 1, res + " Q" + queenPlaced + "B[" + row + "][" + col + "] ");
+            board[row][col] = false;
         }
 
-        twoDQueenCombinationKill(board,row,col+1, totalQueen, queenPlaced,res);
+        twoDQueenCombinationKill(board, row, col + 1, totalQueen, queenPlaced, res);
     }
 
     public static boolean isSafe(boolean[][] board, int row, int col) {
@@ -89,7 +89,7 @@ public class Two_D_QueenCombinationKill {
         r = row;
         c = col;
         // checking left horizontal
-        while ( c >= 0) {
+        while (c >= 0) {
             if (board[r][c]) {
                 return false;
             }

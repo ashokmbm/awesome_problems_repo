@@ -16,8 +16,8 @@ public class One_D_QueenPermutationCombination {
 
     public static void main(String[] args) {
         boolean[] boxes = new boolean[4];
-       // printQueenPermutaiton(boxes, 2, 0, "");
-        printQueenCombination(boxes,2,0,"",-1);
+        // printQueenPermutaiton(boxes, 2, 0, "");
+        printQueenCombination(boxes, 2, 0, "", -1);
     }
 
     public static void printQueenPermutaiton(boolean[] boxes, int totalQueens, int totalQueensPlacedSoFar, String output) {
@@ -39,14 +39,14 @@ public class One_D_QueenPermutationCombination {
         /**
          * In combination we need to eliminate permutaion like q0b0-q1b1  <==> q0b1-q1b0 , we need to keep only one
          */
-        if(totalQueens == totalQueenPlacedSoFar) {
+        if (totalQueens == totalQueenPlacedSoFar) {
             System.out.println(output);
             return;
         }
 
         for (int i = lastBoxIndex + 1; i < boxes.length; i++) {
             boxes[i] = true;
-            printQueenCombination(boxes, totalQueens, totalQueenPlacedSoFar+1, output+"Q"+totalQueenPlacedSoFar+"B"+i+" ", i);
+            printQueenCombination(boxes, totalQueens, totalQueenPlacedSoFar + 1, output + "Q" + totalQueenPlacedSoFar + "B" + i + " ", i);
             boxes[i] = false;
         }
     }

@@ -7,8 +7,8 @@ public class PrintTable {
     }
 
     public void print(int n, int counter, int steps) {
-        if(counter > steps) {
-            return ;
+        if (counter > steps) {
+            return;
         }
         System.out.println(n * counter);
         print(n, ++counter, steps);

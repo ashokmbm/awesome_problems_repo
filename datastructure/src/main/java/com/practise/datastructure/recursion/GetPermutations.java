@@ -10,7 +10,7 @@ public class GetPermutations {
 
     public static List<String> getPermutations(String str) {
 
-        if(str.length() == 1) {
+        if (str.length() == 1) {
             List<String> baseResult = new ArrayList<String>();
             baseResult.add(str);
             return baseResult;
@@ -20,9 +20,9 @@ public class GetPermutations {
         List<String> myResult = new ArrayList<String>();
         List<String> recRes = getPermutations(str.substring(1));
 
-        for(String element : recRes) {
-            for(int i=0; i<=element.length(); i++) {
-                String s = element.substring(0,i)+ch+element.substring(i,element.length());
+        for (String element : recRes) {
+            for (int i = 0; i <= element.length(); i++) {
+                String s = element.substring(0, i) + ch + element.substring(i, element.length());
                 myResult.add(s);
             }
         }

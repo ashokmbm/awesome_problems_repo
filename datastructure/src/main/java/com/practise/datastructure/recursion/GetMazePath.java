@@ -21,11 +21,11 @@ import java.util.List;
 
 public class GetMazePath {
     public static void main(String[] args) {
-        List<String> list = getAllMazePath(0,0,2,2);
+        List<String> list = getAllMazePath(0, 0, 2, 2);
         System.out.println(list);
     }
 
-    public static List<String>  getAllMazePath(int curRow,int curCol,int endRow,int endCol) {
+    public static List<String> getAllMazePath(int curRow, int curCol, int endRow, int endCol) {
         /*
          This problem can be divide in two smaller problem by thinking about immediate steps which can be taken from 0,0.
          From 0,0 we can take a R move and come to 0,1 or from 0,0 we can take a D move and reach at 1,0
@@ -41,13 +41,13 @@ public class GetMazePath {
         */
 
         // Negative Base case
-        if(curCol > endCol || curRow > endRow) {
-           return new ArrayList<String>();
+        if (curCol > endCol || curRow > endRow) {
+            return new ArrayList<String>();
         }
 
         // positive base case
 
-        if(curCol == endCol && curRow == endRow) {
+        if (curCol == endCol && curRow == endRow) {
             List baseResult = new ArrayList<String>();
             baseResult.add("");
             return baseResult;
@@ -55,16 +55,16 @@ public class GetMazePath {
 
         List myResult = new ArrayList<String>();
 
-        List<String> rightMoveRecResult = getAllMazePath(curRow, curCol+1, endRow, endRow);
+        List<String> rightMoveRecResult = getAllMazePath(curRow, curCol + 1, endRow, endRow);
         // Add R to list
-        for(String s : rightMoveRecResult) {
-            myResult.add("R"+s);
+        for (String s : rightMoveRecResult) {
+            myResult.add("R" + s);
         }
 
-        List<String> downMoveRecResult = getAllMazePath(curRow+1, curCol, endRow, endRow);
+        List<String> downMoveRecResult = getAllMazePath(curRow + 1, curCol, endRow, endRow);
         // Add D to list
-        for(String s : downMoveRecResult) {
-            myResult.add("D"+s);
+        for (String s : downMoveRecResult) {
+            myResult.add("D" + s);
         }
 
         return myResult;

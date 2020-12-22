@@ -29,7 +29,7 @@ public class GetBoardPath {
 
     public static List<String> getAllBoardPath(int curr, int end) {
         // negative base case
-        if(curr > end) {
+        if (curr > end) {
             return new ArrayList<String>();
         }
         //positive base case
@@ -43,39 +43,39 @@ public class GetBoardPath {
 
         // Below code can be written in one for loop i = 0 to 6, but I written in detail so that it will be easy to understand
         // if dice value is 1 then added 1 to all path from 1 to 10
-        List<String> rr1 = getAllBoardPath(curr+1, end);
-        for(String s : rr1) {
-            finalResult.add("1"+s);
+        List<String> rr1 = getAllBoardPath(curr + 1, end);
+        for (String s : rr1) {
+            finalResult.add("1" + s);
         }
 
         // if dice value is 2 then added 2 to all path from 2 to 10
-        List<String> rr2 = getAllBoardPath(curr+2, end);
-        for(String s : rr2) {
-            finalResult.add("2"+s);
+        List<String> rr2 = getAllBoardPath(curr + 2, end);
+        for (String s : rr2) {
+            finalResult.add("2" + s);
         }
 
         // if dice value is 3 then added 3 to all path from 3 to 10
-        List<String> rr3 = getAllBoardPath(curr+3, end);
-        for(String s : rr3) {
-            finalResult.add("3"+s);
+        List<String> rr3 = getAllBoardPath(curr + 3, end);
+        for (String s : rr3) {
+            finalResult.add("3" + s);
         }
 
         // if dice value is 4 then added 4 to all path from 4 to 10
-        List<String> rr4 = getAllBoardPath(curr+4, end);
-        for(String s : rr4) {
-            finalResult.add("4"+s);
+        List<String> rr4 = getAllBoardPath(curr + 4, end);
+        for (String s : rr4) {
+            finalResult.add("4" + s);
         }
 
         // if dice value is 5 then added 5 to all path from 5 to 10
-        List<String> rr5 = getAllBoardPath(curr+5, end);
-        for(String s : rr5) {
-            finalResult.add("5"+s);
+        List<String> rr5 = getAllBoardPath(curr + 5, end);
+        for (String s : rr5) {
+            finalResult.add("5" + s);
         }
 
         // if dice value is 6 then added 6 to all path from 6 to 10
-        List<String> rr6 = getAllBoardPath(curr+6, end);
-        for(String s : rr6) {
-            finalResult.add("6"+s);
+        List<String> rr6 = getAllBoardPath(curr + 6, end);
+        for (String s : rr6) {
+            finalResult.add("6" + s);
         }
         return finalResult;
     }

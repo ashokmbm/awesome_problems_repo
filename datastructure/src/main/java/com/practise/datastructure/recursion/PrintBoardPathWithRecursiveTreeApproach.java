@@ -16,23 +16,23 @@ package com.practise.datastructure.recursion;
 
 public class PrintBoardPathWithRecursiveTreeApproach {
     public static void main(String[] args) {
-        printBoardPath(0,6,"");
+        printBoardPath(0, 6, "");
     }
 
     public static void printBoardPath(int cur, int end, String output) {
-        if(cur == end) {
+        if (cur == end) {
             System.out.println(output);
             return;
         }
 
         // -ve base case
-        if(cur> end) {
+        if (cur > end) {
             return;
         }
         // Making 6 recursive calls for as we have 6 choices
         // In each call we will add the dice value in result
-        for(int dice = 1; dice <= 6 ; dice++) {
-            printBoardPath(cur+dice,end, output+dice);
+        for (int dice = 1; dice <= 6; dice++) {
+            printBoardPath(cur + dice, end, output + dice);
         }
     }
 }

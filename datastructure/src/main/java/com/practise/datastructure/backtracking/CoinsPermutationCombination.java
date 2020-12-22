@@ -6,7 +6,7 @@ package com.practise.datastructure.backtracking;
  */
 public class CoinsPermutationCombination {
     public static void main(String[] args) {
-        int[] coins = {2,3,4,5,6};
+        int[] coins = {2, 3, 4, 5, 6};
         //coinPermutation(coins, 10, "");
         coinCombination(coins, 10, "", 0);
     }
@@ -18,23 +18,23 @@ public class CoinsPermutationCombination {
         }
 
         for (int i = 0; i < coins.length; i++) {
-            if(amount >= coins[i]) {
-                coinPermutation(coins, amount - coins[i], result+coins[i]);
+            if (amount >= coins[i]) {
+                coinPermutation(coins, amount - coins[i], result + coins[i]);
             }
         }
     }
 
-        public static void coinCombination(int[] coins, int amount, String result, int lastIndexUsed) {
-            if (amount == 0) {
-                System.out.println(result);
-                return;
-            }
+    public static void coinCombination(int[] coins, int amount, String result, int lastIndexUsed) {
+        if (amount == 0) {
+            System.out.println(result);
+            return;
+        }
 
-            for (int i = lastIndexUsed; i < coins.length; i++) {
-                if(amount >= coins[i]) {
-                    coinCombination(coins, amount - coins[i], result+coins[i], i);
-                }
+        for (int i = lastIndexUsed; i < coins.length; i++) {
+            if (amount >= coins[i]) {
+                coinCombination(coins, amount - coins[i], result + coins[i], i);
             }
         }
     }
+}
 

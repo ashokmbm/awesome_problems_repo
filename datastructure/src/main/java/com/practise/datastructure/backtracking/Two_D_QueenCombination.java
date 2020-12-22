@@ -12,7 +12,6 @@ package com.practise.datastructure.backtracking;
  * Move from out of boundary to next row can be done in two way
  * First is manually update row and col variable.
  * Second by giving extra recursive call with row+1, col = 0
- *
  */
 
 public class Two_D_QueenCombination {
@@ -25,7 +24,7 @@ public class Two_D_QueenCombination {
         // It can define by debugging the issue.
 
         // +ve base case
-        if(totalQueen == queenPlaced) {
+        if (totalQueen == queenPlaced) {
             System.out.println(result);
             return;
         }
@@ -38,23 +37,22 @@ public class Two_D_QueenCombination {
         } */
 
         // -ve base case sequence can define after debug the program
-        if(row == board.length) {
+        if (row == board.length) {
             return;
         }
 
         // Handle Out of boundary condition by manually updating variables
-        if(col == board[row].length) {
-            twoDQueenCombination(board,row+1,0,totalQueen,queenPlaced,result);
+        if (col == board[row].length) {
+            twoDQueenCombination(board, row + 1, 0, totalQueen, queenPlaced, result);
             return;
         }
 
 
-
         // Recursive call for queen can place in box
         board[row][col] = true;
-        twoDQueenCombination(board,row,col+1,totalQueen,queenPlaced+1, result+"Q"+queenPlaced+" B["+row+"]["+col+"] ");
+        twoDQueenCombination(board, row, col + 1, totalQueen, queenPlaced + 1, result + "Q" + queenPlaced + " B[" + row + "][" + col + "] ");
         board[row][col] = false;
         // Recursive call for queen can not place in box
-        twoDQueenCombination(board,row,col+1,totalQueen,queenPlaced,result);
+        twoDQueenCombination(board, row, col + 1, totalQueen, queenPlaced, result);
     }
 }

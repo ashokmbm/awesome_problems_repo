@@ -16,9 +16,9 @@ public class PrintPermutationWithLetterCase {
             return;
         }
         char currentChar = input.charAt(0);
-        String op1 = output+currentChar;
+        String op1 = output + currentChar;
         String op2 = output + String.valueOf(currentChar).toUpperCase();
-        permutationLetterCase(input.substring(1), op1 );
-        permutationLetterCase(input.substring(1), op2 );
+        permutationLetterCase(input.substring(1), op1);
+        permutationLetterCase(input.substring(1), op2);
     }
 }

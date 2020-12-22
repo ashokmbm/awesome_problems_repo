@@ -19,18 +19,18 @@ public class PrintMazePathWithRecursiveTreeApproach {
     }
 
     public static void printMazePath(int cr, int cc, int er, int ec, String output) {
-        if(cr == er && cc == ec) {
+        if (cr == er && cc == ec) {
             System.out.println(output);
             return;
         }
 
         // -ve base case
-        if(cr > er || cc > ec) {
-            return ;
+        if (cr > er || cc > ec) {
+            return;
         }
 
         // Here we have only 2 choices either move H or move V so making two recursive calls
-        printMazePath(cr, cc+1, er, ec, output+"H");
-        printMazePath(cr+1, cc, er, ec, output+"V");
+        printMazePath(cr, cc + 1, er, ec, output + "H");
+        printMazePath(cr + 1, cc, er, ec, output + "V");
     }
 }
