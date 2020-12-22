@@ -8,22 +8,22 @@ import java.util.TreeSet;
 
 /**
  * Print all the subsequences of a string in lexicographical order.
- *
+ * <p>
  * Input Format
  * First line contains an integer N, the no of strings.
  * Next, N lines follows one string per line.
- *
+ * <p>
  * Constraints
  * 1 < len(str) < 20
- *
+ * <p>
  * Output Format
  * No of subsequences one per line
- *
+ * <p>
  * Sample Input
  * 1
  * ab
  * Sample Output
- *
+ * <p>
  * a
  * ab
  * b
@@ -37,29 +37,29 @@ public class QLexicographicalOrderSubSequence {
         List<String> inputArray = new ArrayList<String>();
         int n = keyboard.nextInt();
         keyboard.nextLine();
-        for(int i = 0; i<n ;i++) {
+        for (int i = 0; i < n; i++) {
             String input = keyboard.nextLine();
             inputArray.add(input);
         }
 
-        for(String input : inputArray) {
+        for (String input : inputArray) {
             Set<String> set = new TreeSet<String>();
-            if(input.length() > 1 && input.length() <20) {
+            if (input.length() > 1 && input.length() < 20) {
                 getSubSequence(input, "", 0, set);
-                for(String str : set ){
+                for (String str : set) {
                     System.out.println(str);
                 }
             }
         }
     }
 
-    public static void getSubSequence(String input, String result, int index , Set<String> set) {
-        if(index == input.length()){
+    public static void getSubSequence(String input, String result, int index, Set<String> set) {
+        if (index == input.length()) {
             //System.out.println(result);
             set.add(result);
             return;
         }
-        getSubSequence(input, result, index +1, set);
-        getSubSequence(input, result+input.charAt(index), index +1, set);
+        getSubSequence(input, result, index + 1, set);
+        getSubSequence(input, result + input.charAt(index), index + 1, set);
     }
 }
