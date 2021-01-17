@@ -47,7 +47,8 @@ public class CustomHashMap {
     }
 
     public void put(Integer key, String value) {
-        if (this.size / this.buckets.length > this.loadFactor) {
+        System.out.println((float)this.size / this.buckets.length);
+        if ((float)this.size / this.buckets.length > this.loadFactor) {
             rehashing();
         }
         Entry entry = new Entry(key, value);
@@ -71,6 +72,9 @@ public class CustomHashMap {
     }
 
     public void display() {
+        System.out.println("Size of bucket: "+buckets.length);
+        System.out.println("Size of map: "+this.size);
+
         int i = 0;
         for (LinkedList bucket : buckets) {
             if (bucket != null) {
@@ -106,6 +110,7 @@ public class CustomHashMap {
 
     private void rehashing() {
         this.capacity = this.capacity * 2;
+        this.size = 0;
         LinkedList<Entry>[] oldBuckets = buckets;
         LinkedList<Entry>[] newBuckets = new LinkedList[this.capacity];
         buckets = newBuckets;

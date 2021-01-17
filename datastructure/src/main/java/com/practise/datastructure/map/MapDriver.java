@@ -13,6 +13,11 @@ public class MapDriver {
         map.put(8, "Eight");
         map.put(9, "Nine");
         map.put(10, "Ten");
+        map.put(11, "Nine");
+        map.put(12, "Ten");
+        map.put(13, "Ten");
+        map.put(14, "Ten");
+
 
         //map.display();
         System.out.println(map.get(11));
